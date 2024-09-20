@@ -1,0 +1,23 @@
+services:
+  mssql:
+    container_name: mssql-uchet
+    image: mssql_uchet_python:latest
+    ports:
+      - "1433:1433"
+    environment:
+      MSSQL_PID: "Developer"
+      ACCEPT_EULA: "Y"
+      ACCEPT_EULA_ML: "Y"
+      MSSQL_SA_PASSWORD: "Big_StrongPassword"
+      PYTHON_SERVICES: "/usr/bin/python"
+      PYTHONPATH: "/usr/bin/python"
+    volumes:
+      - type: bind
+        source: /data/mssql_data
+        target: /var/opt/mssql
+      - type: bind
+        source: /data/mssql_backup
+        target: /backup
+      - type: bind
+        source: /data/mssql_doc
+        target: /doclib  
