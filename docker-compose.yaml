@@ -11,6 +11,7 @@ services:
       MSSQL_SA_PASSWORD: "Big_StrongPassword"
       PYTHON_SERVICES: "/usr/bin/python"
       PYTHONPATH: "/usr/bin/python"
+      TZ: "Asia/Yekaterinburg"
     volumes:
       - type: bind
         source: /data/mssql_data

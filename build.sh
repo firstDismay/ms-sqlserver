@@ -8,4 +8,4 @@ mkdir -p /data/mssql_backup
 mkdir -p /data/mssql_doc
 
 # Build image
-docker-compose up --build
+docker compose up --build
